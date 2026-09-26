@@ -717,6 +717,7 @@ function showOxWelcome() {
       <p class="text-5xl mb-5">⭕</p>
       <h3 class="text-2xl font-black text-slate-800 mb-2">OX 퀴즈</h3>
       <p class="text-slate-500">${OX.length ? `총 ${OX.length}문장이 준비되어 있어요.` : '아직 문장이 없어요. ox.txt 파일을 올려 주세요.'}</p>
+      <p class="text-slate-400 text-sm mt-2">❌ 틀린 문장은 저장돼서 사이드바의 '틀린 문장'에서 다시 풀어 볼 수 있어요.</p>
       ${oxSkipped.length ? `<p class="text-xs text-amber-700 mt-2">단원을 찾지 못한 문장 ${oxSkipped.length}개는 빠졌어요.</p>` : ''}
       ${OX.length ? `<button onclick="ox.random = true; startOx('all')" class="mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">전체 섞어서 풀기</button>` : ''}
       <p class="md:hidden text-slate-400 text-sm mt-3">👈 아래 버튼을 누르면 단원을 고를 수 있는 사이드바(메뉴)가 나와요.</p>
@@ -894,6 +895,7 @@ function showFillWelcome() {
       <h3 class="text-2xl font-black text-slate-800 mb-2">빈칸채우기</h3>
       <p class="text-slate-500">${FILL.length ? `총 ${FILL.length}문장이 준비되어 있어요.` : '아직 문장이 없어요. fill.txt 파일을 올려 주세요.'}</p>
       <p class="text-slate-400 text-sm mt-2">빈칸에 들어갈 말을 입력하면 돼요. 띄어쓰기나 사소한 오타는 정답으로 봐줘요.</p>
+      <p class="text-slate-400 text-sm mt-1">❌ 틀린 문제는 저장돼서 사이드바의 '오답 노트'에서 다시 풀어 볼 수 있어요.</p>
       ${fillSkipped.length ? `<p class="text-xs text-amber-700 mt-2">단원을 찾지 못했거나 빈칸(___)·정답이 없는 문장 ${fillSkipped.length}개는 빠졌어요.</p>` : ''}
       ${FILL.length ? `<button onclick="fill.random = true; startFill('all')" class="mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">전체 섞어서 풀기</button>` : ''}
       <p class="md:hidden text-slate-400 text-sm mt-3">👈 아래 버튼을 누르면 단원을 고를 수 있는 사이드바(메뉴)가 나와요.</p>
