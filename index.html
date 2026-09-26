@@ -711,7 +711,7 @@ const oxCount = code => OX.filter(x => x.code === code).length;
 let ox = { scope: null, items: [], idx: 0, right: 0, wrong: [], answered: null, random: false };
 
 function showOxWelcome() {
-  setHeader('OX 퀴즈', '왼쪽 메뉴에서 소단원을 고르거나, 전체를 섞어서 풀어 보세요.');
+  setHeader('OX 퀴즈', '왼쪽 메뉴에서 소단원을 누르면 문제가 나와요.');
   content.innerHTML = `
     <div class="fade-in text-center pt-16 md:pt-24">
       <p class="text-5xl mb-5">⭕</p>
@@ -719,9 +719,8 @@ function showOxWelcome() {
       <p class="text-slate-500">${OX.length ? `총 ${OX.length}문장이 준비되어 있어요.` : '아직 문장이 없어요. ox.txt 파일을 올려 주세요.'}</p>
       <p class="text-slate-400 text-sm mt-2">❌ 틀린 문장은 저장돼서 사이드바의 '틀린 문장'에서 다시 풀어 볼 수 있어요.</p>
       ${oxSkipped.length ? `<p class="text-xs text-amber-700 mt-2">단원을 찾지 못한 문장 ${oxSkipped.length}개는 빠졌어요.</p>` : ''}
-      ${OX.length ? `<button onclick="ox.random = true; startOx('all')" class="mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">전체 섞어서 풀기</button>` : ''}
       <p class="md:hidden text-slate-400 text-sm mt-3">👈 아래 버튼을 누르면 단원을 고를 수 있는 사이드바(메뉴)가 나와요.</p>
-      <div><button onclick="toggleSidebar()" class="md:hidden mt-3 px-5 py-2.5 rounded-xl border border-slate-200 bg-white font-bold text-slate-600">단원 고르기</button></div>
+      <button onclick="toggleSidebar()" class="md:hidden mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">단원 고르기</button>
     </div>`;
 }
 
@@ -888,7 +887,7 @@ function fillMatch(input, answers) {
 let fill = { scope: null, items: [], idx: 0, right: 0, wrong: [], answered: null, typed: '', random: false };
 
 function showFillWelcome() {
-  setHeader('빈칸채우기', '왼쪽 메뉴에서 소단원을 고르거나, 전체를 섞어서 풀어 보세요.');
+  setHeader('빈칸채우기', '왼쪽 메뉴에서 소단원을 누르면 문제가 나와요.');
   content.innerHTML = `
     <div class="fade-in text-center pt-16 md:pt-24">
       <p class="text-5xl mb-5">✍️</p>
@@ -897,9 +896,8 @@ function showFillWelcome() {
       <p class="text-slate-400 text-sm mt-2">빈칸에 들어갈 말을 입력하면 돼요. 띄어쓰기나 사소한 오타는 정답으로 봐줘요.</p>
       <p class="text-slate-400 text-sm mt-1">❌ 틀린 문제는 저장돼서 사이드바의 '오답 노트'에서 다시 풀어 볼 수 있어요.</p>
       ${fillSkipped.length ? `<p class="text-xs text-amber-700 mt-2">단원을 찾지 못했거나 빈칸(___)·정답이 없는 문장 ${fillSkipped.length}개는 빠졌어요.</p>` : ''}
-      ${FILL.length ? `<button onclick="fill.random = true; startFill('all')" class="mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">전체 섞어서 풀기</button>` : ''}
       <p class="md:hidden text-slate-400 text-sm mt-3">👈 아래 버튼을 누르면 단원을 고를 수 있는 사이드바(메뉴)가 나와요.</p>
-      <div><button onclick="toggleSidebar()" class="md:hidden mt-3 px-5 py-2.5 rounded-xl border border-slate-200 bg-white font-bold text-slate-600">단원 고르기</button></div>
+      <button onclick="toggleSidebar()" class="md:hidden mt-6 px-5 py-2.5 rounded-xl text-white font-bold" style="background:var(--accent)">단원 고르기</button>
     </div>`;
 }
 
